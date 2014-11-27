@@ -27,21 +27,25 @@ var paintDown = function paintDown(element) {
  
 console.log('<script>\n' + paintDown.toString() + '\n</script>\n');
 
+function trapezius(i) {
+  var Dw = width/2;
+  var x0 = i/levels*Dw, x1 = (i+1)/levels*Dw, x2 = width-x1, x3 = width - x0;
+  var y0 = y3 = (levels-i)/levels*height, y1 = y2 = (levels-i-1)/levels*height;
+  var level_id = 'level_'+i;
+  return ('  <polygon id="' + level_id + '" '
+    + 'class="pyramid-level" level="' + i + '" '
+    + 'state="to-go" '
+    + 'style="fill:lightgrey;stroke:white;stroke-width:1" '
+    + 'onClick="paintDown(this)" '
+    + 'points="' + coor2point(x0,y0) + coor2point(x1,y1) + coor2point(x2,y2) + coor2point(x3,y3) + '" '
+    + '/>');
+}
 
 console.log('<svg '
   + 'width="' + width.toString() + '" '
   + 'height="' + width.toString() + '">');
 for (var i=0; i<levels; i++) {
-  var Dw = width/2; 
-  var x0 = i/levels*Dw, x1 = (i+1)/levels*Dw, x2 = width-x1, x3 = width - x0;
-  var y0 = y3 = (levels-i)/levels*height, y1 = y2 = (levels-i-1)/levels*height;
-  var level_id = 'level_'+i;
-  console.log('  <polygon id="' + level_id + '" class="pyramid-level" level="' + i + '" '
-    + 'points="' + coor2point(x0,y0) + coor2point(x1,y1) + coor2point(x2,y2) + coor2point(x3,y3) + '" ' 
-    + 'state="to-go" '
-    + 'style="fill:lightgrey;stroke:white;stroke-width:1" '
-    + 'onClick="paintDown(this)" '
-    + '/>');
+  console.log(trapezius(i));
 }
 console.log('</svg>');
 console.log('</body>');
