@@ -4,7 +4,7 @@ var earningsDistribution =[
   {quintil: 65, earnings: 34567},
   {quintil: 80, earnings: 45678},
 ];
-var max_earnings = 67890;
+var max_earnings = 67890, min_earnings = 10000;
 var levels = earningsDistribution.length;
 
 var height = width = 300
@@ -29,11 +29,12 @@ function trapezius(i) {
 function bar(i) {
   var Dw = width/20;
   var x0 = x3 = i*Dw, x1 = x2 = (i+1)*Dw;
-  var y0 = y1 = height, y2 = y3 = height;
+  var y0 = y1 = height, y2 = y3 = (1-min_earnings/max_earnings)*height;
   for (d=0; d<i*5 && d<earningsDistribution.length; d++) {
     var q = earningsDistribution[d]['quintil'];
     if ((i+1)*5 >= q) y2 = y3 = (1-earningsDistribution[d]['earnings']/max_earnings)*height;
   }
+  if ((i+1)*5==100) y2 = y3 = 0;
   return '  <polygon '
     + 'style="fill:purple;stroke:white;stroke-width:1" '
     + 'points="' + coor2point(x0,y0) + coor2point(x1,y1) + coor2point(x2,y2) + coor2point(x3,y3) + '" />';
