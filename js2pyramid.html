@@ -6,6 +6,9 @@ function paintDown(element) {
   var stages = document.getElementsByClassName("pyramid-level");
   var levels = stages.length;
   var level = element.getAttribute("level");
+  var quintil = element.getAttribute("quintil");
+  var expBar = document.getElementById("quintil_"+quintil);
+  expBar.style.fill="forestgreen";
   for (i=0; i<levels; i++) {
     if (i<=level) {
       stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; //stages[i].className="completed"; 
@@ -19,34 +22,34 @@ function paintDown(element) {
 
 <div>
  <svg width="300" height="300">
-  <polygon id="level_0" class="pyramid-level" level="0" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 0,300 37.5,225 262.5,225 300,300" />
-  <polygon id="level_1" class="pyramid-level" level="1" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 37.5,225 75,150 225,150 262.5,225" />
-  <polygon id="level_2" class="pyramid-level" level="2" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 75,150 112.5,75 187.5,75 225,150" />
-  <polygon id="level_3" class="pyramid-level" level="3" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 112.5,75 150,0 150,0 187.5,75" />
+  <polygon id="level_0" class="pyramid-level" level="0" quintil = "20" earnings = "12345" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 0,300 37.5,225 262.5,225 300,300" />
+  <polygon id="level_1" class="pyramid-level" level="1" quintil = "30" earnings = "23456" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 37.5,225 75,150 225,150 262.5,225" />
+  <polygon id="level_2" class="pyramid-level" level="2" quintil = "65" earnings = "34567" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 75,150 112.5,75 187.5,75 225,150" />
+  <polygon id="level_3" class="pyramid-level" level="3" quintil = "80" earnings = "45678" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 112.5,75 150,0 150,0 187.5,75" />
  </svg>
 </div>
 <div>
  <svg width="300" height="300">
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 0,300 15,300 15,255.81087052585065 0,255.81087052585065" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 15,300 30,300 30,255.81087052585065 15,255.81087052585065" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 30,300 45,300 45,255.81087052585065 30,255.81087052585065" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 45,300 60,300 60,245.44851966416263 45,245.44851966416263" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 60,300 75,300 75,245.44851966416263 60,245.44851966416263" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 75,300 90,300 90,196.34997790543525 75,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 90,300 105,300 105,196.34997790543525 90,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 105,300 120,300 120,196.34997790543525 105,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 120,300 135,300 135,196.34997790543525 120,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 135,300 150,300 150,196.34997790543525 135,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 150,300 165,300 165,196.34997790543525 150,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 165,300 180,300 180,196.34997790543525 165,196.34997790543525" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 180,300 195,300 195,147.25143614670793 180,147.25143614670793" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 195,300 210,300 210,147.25143614670793 195,147.25143614670793" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 210,300 225,300 225,147.25143614670793 210,147.25143614670793" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 225,300 240,300 240,98.15289438798057 225,98.15289438798057" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 240,300 255,300 255,98.15289438798057 240,98.15289438798057" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 255,300 270,300 270,98.15289438798057 255,98.15289438798057" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 270,300 285,300 285,98.15289438798057 270,98.15289438798057" />
-  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 285,300 300,300 300,0 285,0" />
+  <polygon id="quintil_5" class="earnings_bar" quintil="5" style="fill:purple;stroke:white;stroke-width:1" points=" 0,300 15,300 15,255.81087052585065 0,255.81087052585065" />
+  <polygon id="quintil_10" class="earnings_bar" quintil="10" style="fill:purple;stroke:white;stroke-width:1" points=" 15,300 30,300 30,255.81087052585065 15,255.81087052585065" />
+  <polygon id="quintil_15" class="earnings_bar" quintil="15" style="fill:purple;stroke:white;stroke-width:1" points=" 30,300 45,300 45,255.81087052585065 30,255.81087052585065" />
+  <polygon id="quintil_20" class="earnings_bar" quintil="20" style="fill:purple;stroke:white;stroke-width:1" points=" 45,300 60,300 60,245.44851966416263 45,245.44851966416263" />
+  <polygon id="quintil_25" class="earnings_bar" quintil="25" style="fill:purple;stroke:white;stroke-width:1" points=" 60,300 75,300 75,245.44851966416263 60,245.44851966416263" />
+  <polygon id="quintil_30" class="earnings_bar" quintil="30" style="fill:purple;stroke:white;stroke-width:1" points=" 75,300 90,300 90,196.34997790543525 75,196.34997790543525" />
+  <polygon id="quintil_35" class="earnings_bar" quintil="35" style="fill:purple;stroke:white;stroke-width:1" points=" 90,300 105,300 105,196.34997790543525 90,196.34997790543525" />
+  <polygon id="quintil_40" class="earnings_bar" quintil="40" style="fill:purple;stroke:white;stroke-width:1" points=" 105,300 120,300 120,196.34997790543525 105,196.34997790543525" />
+  <polygon id="quintil_45" class="earnings_bar" quintil="45" style="fill:purple;stroke:white;stroke-width:1" points=" 120,300 135,300 135,196.34997790543525 120,196.34997790543525" />
+  <polygon id="quintil_50" class="earnings_bar" quintil="50" style="fill:purple;stroke:white;stroke-width:1" points=" 135,300 150,300 150,196.34997790543525 135,196.34997790543525" />
+  <polygon id="quintil_55" class="earnings_bar" quintil="55" style="fill:purple;stroke:white;stroke-width:1" points=" 150,300 165,300 165,196.34997790543525 150,196.34997790543525" />
+  <polygon id="quintil_60" class="earnings_bar" quintil="60" style="fill:purple;stroke:white;stroke-width:1" points=" 165,300 180,300 180,196.34997790543525 165,196.34997790543525" />
+  <polygon id="quintil_65" class="earnings_bar" quintil="65" style="fill:purple;stroke:white;stroke-width:1" points=" 180,300 195,300 195,147.25143614670793 180,147.25143614670793" />
+  <polygon id="quintil_70" class="earnings_bar" quintil="70" style="fill:purple;stroke:white;stroke-width:1" points=" 195,300 210,300 210,147.25143614670793 195,147.25143614670793" />
+  <polygon id="quintil_75" class="earnings_bar" quintil="75" style="fill:purple;stroke:white;stroke-width:1" points=" 210,300 225,300 225,147.25143614670793 210,147.25143614670793" />
+  <polygon id="quintil_80" class="earnings_bar" quintil="80" style="fill:purple;stroke:white;stroke-width:1" points=" 225,300 240,300 240,98.15289438798057 225,98.15289438798057" />
+  <polygon id="quintil_85" class="earnings_bar" quintil="85" style="fill:purple;stroke:white;stroke-width:1" points=" 240,300 255,300 255,98.15289438798057 240,98.15289438798057" />
+  <polygon id="quintil_90" class="earnings_bar" quintil="90" style="fill:purple;stroke:white;stroke-width:1" points=" 255,300 270,300 270,98.15289438798057 255,98.15289438798057" />
+  <polygon id="quintil_95" class="earnings_bar" quintil="95" style="fill:purple;stroke:white;stroke-width:1" points=" 270,300 285,300 285,98.15289438798057 270,98.15289438798057" />
+  <polygon id="quintil_100" class="earnings_bar" quintil="100" style="fill:purple;stroke:white;stroke-width:1" points=" 285,300 300,300 300,0 285,0" />
  </svg>
 </div>
 </body>

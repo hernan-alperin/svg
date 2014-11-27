@@ -16,9 +16,10 @@ function trapezius(i) {
   var Dw = width/2;
   var x0 = i/levels*Dw, x1 = (i+1)/levels*Dw, x2 = width-x1, x3 = width - x0;
   var y0 = y3 = (levels-i)/levels*height, y1 = y2 = (levels-i-1)/levels*height;
-  var level_id = 'level_'+i;
-  return ('  <polygon id="' + level_id + '" '
+  return ('  <polygon id="level_' + i + '" '
     + 'class="pyramid-level" level="' + i + '" '
+    + 'quintil = "' + earningsDistribution[i]['quintil'] + '" '
+    + 'earnings = "' + earningsDistribution[i]['earnings'] + '" '
     + 'state="to-go" '
     + 'style="fill:lightgrey;stroke:white;stroke-width:1" '
     + 'onClick="paintDown(this)" '
@@ -35,7 +36,8 @@ function bar(i) {
     if ((i+1)*5 >= q) y2 = y3 = (1-earningsDistribution[d]['earnings']/max_earnings)*height;
   }
   if ((i+1)*5==100) y2 = y3 = 0;
-  return '  <polygon '
+  return '  <polygon id="quintil_' + (i+1)*5 + '" '
+    + 'class="earnings_bar" quintil="' + (i+1)*5 + '" '
     + 'style="fill:purple;stroke:white;stroke-width:1" '
     + 'points="' + coor2point(x0,y0) + coor2point(x1,y1) + coor2point(x2,y2) + coor2point(x3,y3) + '" />';
 }
@@ -44,6 +46,9 @@ var paintDown = function paintDown(element) {
   var stages = document.getElementsByClassName("pyramid-level");
   var levels = stages.length;
   var level = element.getAttribute("level");
+  var quintil = element.getAttribute("quintil");
+  var expBar = document.getElementById("quintil_"+quintil);
+  expBar.style.fill="forestgreen";
   for (i=0; i<levels; i++) {
     if (i<=level) {
       stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; //stages[i].className="completed"; 
