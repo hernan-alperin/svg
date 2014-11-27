@@ -32,7 +32,7 @@ function bar(i) {
   var y0 = y1 = height, y2 = y3 = height;
   for (d=0; d<i*5 && d<earningsDistribution.length; d++) {
     var q = earningsDistribution[d]['quintil'];
-    if (i*5 >= q) y2 = y3 = (1-earningsDistribution[d]['earnings']/max_earnings)*height;
+    if ((i+1)*5 >= q) y2 = y3 = (1-earningsDistribution[d]['earnings']/max_earnings)*height;
   }
   return '  <polygon '
     + 'style="fill:purple;stroke:white;stroke-width:1" '
