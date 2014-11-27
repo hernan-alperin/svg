@@ -47,8 +47,9 @@ var paintDown = function paintDown(element) {
   var levels = stages.length;
   var level = element.getAttribute("level");
   var quintil = element.getAttribute("quintil");
-  var expBar = document.getElementById("quintil_"+quintil);
-  expBar.style.fill="forestgreen";
+  var allBars = document.getElementsByClassName("earnings_bar");
+  for (i=0; i<allBars.length; i++) allBars[i].style.fill="purple";
+  var expBar = document.getElementById("quintil_"+quintil).style.fill="forestgreen";
   for (i=0; i<levels; i++) {
     if (i<=level) {
       stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; //stages[i].className="completed"; 
