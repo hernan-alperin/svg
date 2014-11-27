@@ -9,18 +9,16 @@ console.log('<!DOCTYPE html>');
 console.log('<html>');
 console.log('<body>');
 
-var paintDown = '<script>'
-  + 'function paintDown(element) {\n'
-  + '  var stages = document.getElementsByClassName("pyramid-level");\n'
-  + '  var levels = stages.length;\n'
-  + '  var level = element.getAttribute("level");\n'
-  + '  for (i=0; i<=level; i++) stages[i].style.fill="forestgreen";\n'
-  + '  for (; i<levels; i++) stages[i].style.fill="lightgrey";\n'
-  + '};\n'
-  + '</script>';
+var paintDown = function paintDown(element) {
+  var stages = document.getElementsByClassName("pyramid-level");
+  var levels = stages.length;
+  var level = element.getAttribute("level");
+  for (i=0; i<=level; i++) stages[i].style.fill="forestgreen";
+  for (; i<levels; i++) stages[i].style.fill="lightgrey";
+};
+ 
+console.log('<script>\n' + paintDown.toString() + '\n</script>\n');
 
-console.log(paintDown);
-//console.log('<script>function paintDown(element) {element.style.fill="forestgreen";}</script>');
 console.log('<svg '
   + 'width="' + width.toString() + '" '
   + 'height="' + width.toString() + '">');
