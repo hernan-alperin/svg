@@ -8,22 +8,46 @@ function paintDown(element) {
   var level = element.getAttribute("level");
   for (i=0; i<levels; i++) {
     if (i<=level) {
-      //stages[i].className="completed"; 
-      stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; 
+      stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; //stages[i].className="completed"; 
     } 
     else {
-      //stages[i].className="to-achieve"; 
-      stages[i].setAttribute('state','to-go'); stages[i].style.fill="lightgrey"; 
+      stages[i].setAttribute('state','to-go'); stages[i].style.fill="lightgrey"; //stages[i].className="to-achieve"; 
     }
   }
 }
 </script>
 
-<svg width="300" height="300">
-  <polygon id="level_0" class="pyramid-level" level="0" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 0,259.8076211353316 37.5,194.8557158514987 262.5,194.8557158514987 300,259.8076211353316" />
-  <polygon id="level_1" class="pyramid-level" level="1" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 37.5,194.8557158514987 75,129.9038105676658 225,129.9038105676658 262.5,194.8557158514987" />
-  <polygon id="level_2" class="pyramid-level" level="2" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 75,129.9038105676658 112.5,64.9519052838329 187.5,64.9519052838329 225,129.9038105676658" />
-  <polygon id="level_3" class="pyramid-level" level="3" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 112.5,64.9519052838329 150,0 150,0 187.5,64.9519052838329" />
-</svg>
+<div>
+ <svg width="300" height="300">
+  <polygon id="level_0" class="pyramid-level" level="0" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 0,300 37.5,225 262.5,225 300,300" />
+  <polygon id="level_1" class="pyramid-level" level="1" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 37.5,225 75,150 225,150 262.5,225" />
+  <polygon id="level_2" class="pyramid-level" level="2" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 75,150 112.5,75 187.5,75 225,150" />
+  <polygon id="level_3" class="pyramid-level" level="3" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 112.5,75 150,0 150,0 187.5,75" />
+ </svg>
+</div>
+<div>
+ <svg width="300" height="300">
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 0,300 15,300 15,300 0,300" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 15,300 30,300 30,285 15,285" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 30,300 45,300 45,270 30,270" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 45,300 60,300 60,255 45,255" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 60,300 75,300 75,240 60,240" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 75,300 90,300 90,225 75,225" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 90,300 105,300 105,210 90,210" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 105,300 120,300 120,195 105,195" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 120,300 135,300 135,180 120,180" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 135,300 150,300 150,165 135,165" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 150,300 165,300 165,150 150,150" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 165,300 180,300 180,135 165,135" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 180,300 195,300 195,120 180,120" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 195,300 210,300 210,105 195,105" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 210,300 225,300 225,90 210,90" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 225,300 240,300 240,75 225,75" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 240,300 255,300 255,60 240,60" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 255,300 270,300 270,45 255,45" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 270,300 285,300 285,30 270,30" />
+  <polygon style="fill:purple;stroke:white;stroke-width:1" points=" 285,300 300,300 300,15 285,15" />
+ </svg>
+</div>
 </body>
 </html>
