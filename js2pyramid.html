@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <body>
-<script>function paintDown(element) {element.style.fill="forestgreen";}</script>
+<script>function paintDown(element) {
+  var stages = document.getElementsByClassName("pyramid-level");
+  var levels = stages.length;
+  var level = element.getAttribute("level");
+  for (i=0; i<=level; i++) stages[i].style.fill="forestgreen";
+  for (; i<levels; i++) stages[i].style.fill="lightgrey";
+};
+</script>
 <svg width="300" height="300">
-  <polygon id="level_0 level="0" " points=" 0,259.8076211353316 37.5,194.8557158514987 262.5,194.8557158514987 300,259.8076211353316" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
-  <polygon id="level_1 level="1" " points=" 37.5,194.8557158514987 75,129.9038105676658 225,129.9038105676658 262.5,194.8557158514987" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
-  <polygon id="level_2 level="2" " points=" 75,129.9038105676658 112.5,64.9519052838329 187.5,64.9519052838329 225,129.9038105676658" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
-  <polygon id="level_3 level="3" " points=" 112.5,64.9519052838329 150,0 150,0 187.5,64.9519052838329" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
+  <polygon id="level_0" class="pyramid-level" level="0" points=" 0,259.8076211353316 37.5,194.8557158514987 262.5,194.8557158514987 300,259.8076211353316" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
+  <polygon id="level_1" class="pyramid-level" level="1" points=" 37.5,194.8557158514987 75,129.9038105676658 225,129.9038105676658 262.5,194.8557158514987" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
+  <polygon id="level_2" class="pyramid-level" level="2" points=" 75,129.9038105676658 112.5,64.9519052838329 187.5,64.9519052838329 225,129.9038105676658" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
+  <polygon id="level_3" class="pyramid-level" level="3" points=" 112.5,64.9519052838329 150,0 150,0 187.5,64.9519052838329" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" />
 </svg>
 </body>
 </html>
