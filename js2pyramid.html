@@ -6,8 +6,16 @@ function paintDown(element) {
   var stages = document.getElementsByClassName("pyramid-level");
   var levels = stages.length;
   var level = element.getAttribute("level");
-  for (i=0; i<=level; i++) stages[i].style.fill="forestgreen";
-  for (; i<levels; i++) stages[i].style.fill="lightgrey";
+  for (i=0; i<levels; i++) {
+    if (i<=level) {
+      //stages[i].className="completed"; 
+      stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; 
+    } 
+    else {
+      //stages[i].className="to-achieve"; 
+      stages[i].setAttribute('state','to-go'); stages[i].style.fill="lightgrey"; 
+    }
+  }
 }
 </script>
 
