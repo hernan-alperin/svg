@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function paintDown(element) {
+  var stages = document.getElementsByClassName("pyramid-level");
+  var levels = stages.length;
+  var level = element.getAttribute("level");
+  var percentile = element.getAttribute("percentile");
+  var allBars = document.getElementsByClassName("earnings_bar");
+  for (i=0; i<allBars.length; i++) allBars[i].style.fill="purple";
+  var expBar = document.getElementById("percentile_"+percentile).style.fill="forestgreen";
+  for (i=0; i<levels; i++) {
+    if (i<=level) {
+      stages[i].setAttribute('state','passed'); stages[i].style.fill="forestgreen"; //stages[i].className="completed"; 
+    } 
+    else {
+      stages[i].setAttribute('state','to-go'); stages[i].style.fill="lightgrey"; //stages[i].className="to-achieve"; 
+    }
+  }
+}
+</script>
+
+<div>
+ <svg width="300" height="300">
+  <polygon id="level_0" class="pyramid-level" level="0" percentile = "10" earningsPerYear = "26599" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 0,300 21.428571428571427,257.1428571428571 278.57142857142856,257.1428571428571 300,300" />
+  <polygon id="level_1" class="pyramid-level" level="1" percentile = "20" earningsPerYear = "27072" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 21.428571428571427,257.1428571428571 42.857142857142854,214.28571428571428 257.14285714285717,214.28571428571428 278.57142857142856,257.1428571428571" />
+  <polygon id="level_2" class="pyramid-level" level="2" percentile = "25" earningsPerYear = "27516" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 42.857142857142854,214.28571428571428 64.28571428571428,171.42857142857142 235.71428571428572,171.42857142857142 257.14285714285717,214.28571428571428" />
+  <polygon id="level_3" class="pyramid-level" level="3" percentile = "50" earningsPerYear = "30257" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 64.28571428571428,171.42857142857142 85.71428571428571,128.57142857142856 214.28571428571428,128.57142857142856 235.71428571428572,171.42857142857142" />
+  <polygon id="level_4" class="pyramid-level" level="4" percentile = "65" earningsPerYear = "32016" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 85.71428571428571,128.57142857142856 107.14285714285714,85.71428571428571 192.85714285714286,85.71428571428571 214.28571428571428,128.57142857142856" />
+  <polygon id="level_5" class="pyramid-level" level="5" percentile = "80" earningsPerYear = "47237" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 107.14285714285714,85.71428571428571 128.57142857142856,42.857142857142854 171.42857142857144,42.857142857142854 192.85714285714286,85.71428571428571" />
+  <polygon id="level_6" class="pyramid-level" level="6" percentile = "90" earningsPerYear = "50630" state="to-go" style="fill:lightgrey;stroke:white;stroke-width:1" onClick="paintDown(this)" points=" 128.57142857142856,42.857142857142854 150,0 150,0 171.42857142857144,42.857142857142854" />
+ </svg>
+</div>
+<div>
+ <svg width="300" height="300">
+  <polygon id="percentile_5" class="earnings_bar" percentile="5" style="fill:purple;stroke:white;stroke-width:1" points=" 0,300 15,300 15,255.81087052585065 0,255.81087052585065" />
+  <polygon id="percentile_10" class="earnings_bar" percentile="10" style="fill:purple;stroke:white;stroke-width:1" points=" 15,300 30,300 30,182.46133451171013 15,182.46133451171013" />
+  <polygon id="percentile_15" class="earnings_bar" percentile="15" style="fill:purple;stroke:white;stroke-width:1" points=" 30,300 45,300 45,182.46133451171013 30,182.46133451171013" />
+  <polygon id="percentile_20" class="earnings_bar" percentile="20" style="fill:purple;stroke:white;stroke-width:1" points=" 45,300 60,300 60,180.37118868758284 45,180.37118868758284" />
+  <polygon id="percentile_25" class="earnings_bar" percentile="25" style="fill:purple;stroke:white;stroke-width:1" points=" 60,300 75,300 75,178.40919133893064 60,178.40919133893064" />
+  <polygon id="percentile_30" class="earnings_bar" percentile="30" style="fill:purple;stroke:white;stroke-width:1" points=" 75,300 90,300 90,178.40919133893064 75,178.40919133893064" />
+  <polygon id="percentile_35" class="earnings_bar" percentile="35" style="fill:purple;stroke:white;stroke-width:1" points=" 90,300 105,300 105,178.40919133893064 90,178.40919133893064" />
+  <polygon id="percentile_40" class="earnings_bar" percentile="40" style="fill:purple;stroke:white;stroke-width:1" points=" 105,300 120,300 120,178.40919133893064 105,178.40919133893064" />
+  <polygon id="percentile_45" class="earnings_bar" percentile="45" style="fill:purple;stroke:white;stroke-width:1" points=" 120,300 135,300 135,178.40919133893064 120,178.40919133893064" />
+  <polygon id="percentile_50" class="earnings_bar" percentile="50" style="fill:purple;stroke:white;stroke-width:1" points=" 135,300 150,300 150,166.29695095006628 135,166.29695095006628" />
+  <polygon id="percentile_55" class="earnings_bar" percentile="55" style="fill:purple;stroke:white;stroke-width:1" points=" 150,300 165,300 165,166.29695095006628 150,166.29695095006628" />
+  <polygon id="percentile_60" class="earnings_bar" percentile="60" style="fill:purple;stroke:white;stroke-width:1" points=" 165,300 180,300 180,166.29695095006628 165,166.29695095006628" />
+  <polygon id="percentile_65" class="earnings_bar" percentile="65" style="fill:purple;stroke:white;stroke-width:1" points=" 180,300 195,300 195,158.52408307556342 180,158.52408307556342" />
+  <polygon id="percentile_70" class="earnings_bar" percentile="70" style="fill:purple;stroke:white;stroke-width:1" points=" 195,300 210,300 210,158.52408307556342 195,158.52408307556342" />
+  <polygon id="percentile_75" class="earnings_bar" percentile="75" style="fill:purple;stroke:white;stroke-width:1" points=" 210,300 225,300 225,158.52408307556342 210,158.52408307556342" />
+  <polygon id="percentile_80" class="earnings_bar" percentile="80" style="fill:purple;stroke:white;stroke-width:1" points=" 225,300 240,300 240,91.26380910296066 225,91.26380910296066" />
+  <polygon id="percentile_85" class="earnings_bar" percentile="85" style="fill:purple;stroke:white;stroke-width:1" points=" 240,300 255,300 255,91.26380910296066 240,91.26380910296066" />
+  <polygon id="percentile_90" class="earnings_bar" percentile="90" style="fill:purple;stroke:white;stroke-width:1" points=" 255,300 270,300 270,76.27043747238179 255,76.27043747238179" />
+  <polygon id="percentile_95" class="earnings_bar" percentile="95" style="fill:purple;stroke:white;stroke-width:1" points=" 270,300 285,300 285,76.27043747238179 270,76.27043747238179" />
+  <polygon id="percentile_100" class="earnings_bar" percentile="100" style="fill:purple;stroke:white;stroke-width:1" points=" 285,300 300,300 300,0 285,0" />
+ </svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{  
+  "stages": [
+    {"name":"Medical / Clinical Laboratory Aide", "percentile":"10", "earningsPerYear":"26599"},
+    {"name":"Medical Assistant", "percentile":"20", "earningsPerYear":"27072"},
+    {"name":"Medical Records and Health Information Technicians", "percentile":"25", "earningsPerYear":"27516"},
+    {"name":"Health Information Technician", "percentile":"50", "earningsPerYear":"30257"},
+    {"name":"Registered Health Information Technician (RHIT)", "percentile":"65", "earningsPerYear":"32016"},
+    {"name":"Medical / Clinical Laboratory Technologist", "percentile":"80", "earningsPerYear":"47237"},
+    {"name":"Medical Technologist", "percentile":"90", "earningsPerYear":"50630"}
+  ]
+}
+
